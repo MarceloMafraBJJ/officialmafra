@@ -17,6 +17,7 @@ const ExperienceCard = ({ experience }: Props) => {
       <div className="flex space-x-4">
         {experience?.technologies.map((technology, i) => (
           <motion.img
+            key={i}
             initial={{ y: -80, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -32,7 +33,10 @@ const ExperienceCard = ({ experience }: Props) => {
 
       <ul className="space-y-8 md:space-y-5 font-medium pr-0 md:pr-10 text-base w-full h-80 md:text-lg overflow-y-scroll scrollbar-track-gray-900/20 scrollbar-thumb-purple-500/80 scrollbar-thin">
         {experience?.points.map((point, i) => (
-          <li key={i} className="break-all break-words"> - {point}</li>
+          <li key={i} className="break-all break-words">
+            {" "}
+            - {point}
+          </li>
         ))}
       </ul>
     </article>

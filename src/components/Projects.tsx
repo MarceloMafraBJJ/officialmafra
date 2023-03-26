@@ -21,10 +21,10 @@ const Projects = ({ projects }: Props) => {
       <Title text="Projetos" />
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-track-gray-400/20 scrollbar-thumb-purple-500/80 scrollbar-thin">
-        {projects.map((project, index) => (
+        {projects.map((project, i) => (
           <div
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-5 md:p-44 h-screen"
-            key={index}
+            key={i}
           >
             <motion.img
               initial={{ y: -300, opacity: 0 }}
@@ -46,6 +46,7 @@ const Projects = ({ projects }: Props) => {
               <div className="flex items-center justify-center space-x-2">
                 {project?.technologies.map((technology, i) => (
                   <motion.img
+                    key={i}
                     initial={{ y: -50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
@@ -63,7 +64,7 @@ const Projects = ({ projects }: Props) => {
                 {project?.summary}
               </p>
               <h5 className="text-xl font-semibold text-center">
-                {index + 1} │ {projects.length}
+                {i + 1} │ {projects.length}
               </h5>
             </div>
           </div>
