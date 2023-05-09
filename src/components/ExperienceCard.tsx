@@ -9,7 +9,7 @@ type Props = {
 
 const ExperienceCard = ({ experience }: Props) => {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-[450px] md:h-[400px] w-[80vw] max-w-[500px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-100 md:opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-[400px] w-[80vw] max-w-[500px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-100 md:opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
       <h4 className="text-xl md:text-4xl text-center uppercase font-semibold tracking-[8px] ml-2">
         {experience?.stack}
       </h4>
@@ -31,7 +31,7 @@ const ExperienceCard = ({ experience }: Props) => {
         ))}
       </div>
 
-      <ul className="space-y-8 md:space-y-5 font-medium pr-0 md:pr-10 text-base w-full h-80 md:text-lg overflow-y-scroll scrollbar-track-gray-900/20 scrollbar-thumb-purple-500/80 scrollbar-thin">
+      <ul className="space-y-8 md:space-y-5 font-medium pr-2 md:pr-10 text-base w-full h-80 md:text-lg overflow-y-scroll scrollbar-track-gray-900/20 scrollbar-thumb-gray-600/80 scrollbar-thin">
         {experience?.points.map((point, i) => (
           <li key={i} className="break-all break-words">
             {" "}

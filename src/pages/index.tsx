@@ -28,13 +28,13 @@ type Props = {
 const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
     <div className="bg-[#242424] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 pb-20 select-none scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-purple-500/80">
-      <Head>
-        <title>@officialmafra</title>
+      <Head >
+        <title className="bg-black">@officialmafra</title>
       </Head>
 
-      {/* 
       <Header socials={socials} />
-<section id="hero" className="snap-start">
+
+      <section id="hero" className="snap-start">
         <Hero pageInfo={pageInfo} />
       </section>
 
@@ -52,7 +52,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
       <section id="projects" className="snap-start">
         <Projects projects={projects} />
-      </section> */}
+      </section>
 
       <section id="contact" className="snap-start">
         <Contact />
@@ -63,7 +63,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
 export default Home;
 
-/* export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
@@ -80,4 +80,4 @@ export default Home;
     },
     revalidate: 10,
   };
-}; */
+};

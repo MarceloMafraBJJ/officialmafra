@@ -20,7 +20,7 @@ const About = ({ pageInfo }: Props) => {
     >
       <Title text="Sobre" />
 
-      <div className="flex justify-center items-center flex-col md:flex-row w-full mt-5 md:mt-0">
+      <div className="flex justify-center items-center flex-col md:flex-row w-full mt-16 md:mt-0">
         <motion.img
           src={urlFor(pageInfo?.profilePic).url()}
           alt="profile-image"
