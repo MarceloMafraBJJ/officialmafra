@@ -1,0 +1,6 @@
+ -- Generate New Schema -- 
+
+cs sanity
+npm run dev
+
+-- Deploy --

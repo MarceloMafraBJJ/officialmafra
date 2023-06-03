@@ -59,3 +59,11 @@ export interface Skill extends SanityBody {
   progress: number;
   title: string;
 }
+
+export interface Book extends SanityBody {
+  _type: "books";
+  image: Image;
+  name: string;
+  descripton: string;
+  url: string;
+}

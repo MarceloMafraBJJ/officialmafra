@@ -8,14 +8,23 @@ import WorkExperience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import Books from "@/components/Books";
 
-import { Experience, PageInfo, Project, Skill, Social } from "../../typings";
+import {
+  Book,
+  Experience,
+  PageInfo,
+  Project,
+  Skill,
+  Social,
+} from "../../typings";
 
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchExperiences } from "@/utils/fetchExperiences";
 import { fetchSkills } from "@/utils/fetchSkills";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchSocials } from "@/utils/fetchSocials";
+import { fetchBooks } from "@/utils/fetchBooks";
 
 type Props = {
   pageInfo: PageInfo;
@@ -23,12 +32,20 @@ type Props = {
   skills: Skill[];
   projects: Project[];
   socials: Social[];
+  books: Book[];
 };
 
-const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
+const Home = ({
+  pageInfo,
+  experiences,
+  projects,
+  skills,
+  socials,
+  books,
+}: Props) => {
   return (
     <div className="bg-[#242424] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 pb-20 select-none scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-purple-500/80">
-      <Head >
+      <Head>
         <title className="bg-black">@officialmafra</title>
       </Head>
 
@@ -46,12 +63,16 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         <WorkExperience experiences={experiences} />
       </section>
 
+      <section id="projects" className="snap-start">
+        <Projects projects={projects} />
+      </section>
+
       <section id="skills" className="snap-start">
         <Skills skills={skills} />
       </section>
 
-      <section id="projects" className="snap-start">
-        <Projects projects={projects} />
+      <section id="skills" className="snap-start">
+        <Books books={books} />
       </section>
 
       <section id="contact" className="snap-start">
@@ -69,6 +90,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
   const socials: Social[] = await fetchSocials();
+  const books: Book[] = await fetchBooks();
 
   return {
     props: {
@@ -77,6 +99,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       projects,
       socials,
+      books,
     },
     revalidate: 10,
   };
